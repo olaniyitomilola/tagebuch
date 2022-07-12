@@ -16,11 +16,14 @@
         <div id = "appname">Tagebuch</div>
     </header>
     <main>
-        <form id="login" action="post">
+        <form id="login" action="dashboard.html" method="POST">
             <div id="welcomemessage">Wilkommen</div>
+            <label for="username">Nutzername:</label>
             <input type="text" id = 'username' name = 'username'>
+            <label for="password">Passwort:</label>
             <input type="password" id = 'password' name = 'password'>
-            <input type="button" value="Einloggen">
+            <input id="btn_login" type="button" value="EINLOGGEN">
+            <div id="errorlogger"></div>
 
 
         </form>

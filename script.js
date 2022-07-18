@@ -89,7 +89,17 @@ let register =  [
     {urlahb: 'vacation'},
     {sonning: 'sunny'},
     {neu: 'new'},
-    {neulich: 'recently'}
+    {neulich: 'recently'},
+    {wartete: 'was waiting'},
+    {pflegen: 'maintain'},
+    {betreuen: 'look after'},
+    {herumlungern: 'hang about'},
+    {bedienen: 'service'},
+    {pflegefachpersonen: 'nurses'},
+    {selten: 'rare'},
+    {ungewöhnlich: 'unusual, anomalous, offbeat, unique'},
+    {bedeutet: 'mean, signify, imply, denote'},
+    {erlebt: 'experienced'}
 
 ]
 Object.entries(recentlyadded).forEach((entry) =>{

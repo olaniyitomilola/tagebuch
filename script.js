@@ -1,51 +1,3 @@
-let username = document.getElementById('username');
-let password = document.getElementById('password');
-let errorlogger = document.getElementById('errorlogger'); 
-let addedlist = document.getElementById('recentlyadded');
-let wordoftheday = document.getElementById('wordoftheday')
-let wordofthedaymeaning = document.querySelector('#wordmeaning span')              
-
-
-
-function login (){
-    let btn_login = document.getElementById('btn_login')
-        
-        errorlogger.style.color = 'red';
-        errorlogger.style.fontSize = '0.7em';
-        if(username.value.trim() == ''){
-            errorlogger.textContent = "*kindly enter your username"
-        } else{
-            if(password.value.trim() === ''){
-                errorlogger.textContent = "*kindly enter your password"
-            } else{
-                location.href = 'dashboard.html'
-
-            }
-        }
- 
-}
-
-function removeError(){
-    errorlogger.textContent = '';
-}
-
-//navselector
-const actives = document.querySelectorAll('.nav');
-
-actives.forEach((active) => {
-    active.addEventListener('click', () => {
-        removeActiveClasses();
-        active.classList.add('active');
-
-    });
-});
-
-function removeActiveClasses() {
-    actives.forEach((active) => {
-        active.classList.remove('active');
-    });
-}
-
 let recentlyadded = {
     danke : 'thank you',
     hunger: 'hungry',
@@ -102,6 +54,68 @@ let register =  [
     {erlebt: 'experienced'}
 
 ]
+
+
+
+let templateDashboard = document.getElementById('template-dashboard');
+
+//let templateSelector = document.importNode(templateDashboard.content, true);
+//panel.appendChild(templateSelector);
+
+let username = document.getElementById('username');
+let btn_login = document.getElementById('btn_login')
+
+let password = document.getElementById('password');
+let errorlogger = document.getElementById('errorlogger'); 
+let addedlist = document.getElementById('recentlyadded');
+let wordoftheday = document.getElementById('wordoftheday')
+let wordofthedaymeaning = document.querySelector('#wordmeaning span')              
+let panel = document.querySelector('.container');
+
+function loginPage (){
+        btn_login.addEventListener('click', ()=>{
+            errorlogger.style.color = 'red';
+            errorlogger.style.fontSize = '0.7em';
+            if(username.value.trim() == ''){
+                errorlogger.textContent = "*kindly enter your username"
+            } else{
+                if(password.value.trim() === ''){
+                    errorlogger.textContent = "*kindly enter your password"
+                } else{
+                    location.href = 'dashboard.html'
+    
+                }
+            }
+        }) 
+        function removeError(){
+            errorlogger.textContent = '';
+        }
+        
+        username.addEventListener('focus',removeError);
+        password.addEventListener('focus',removeError);
+}
+
+function dashboardPage(){
+    const actives = document.querySelectorAll('.nav');
+
+    actives.forEach((active) => {
+        active.addEventListener('click', () => {
+            removeActiveClasses();
+            active.classList.add('active');
+
+        });
+    });
+}
+//navselector
+
+
+function removeActiveClasses() {
+    actives.forEach((active) => {
+        active.classList.remove('active');
+    });
+}
+
+
 Object.entries(recentlyadded).forEach((entry) =>{
    const [wrd,meaning] = entry; 
    register.push({[wrd] : meaning});
@@ -158,4 +172,3 @@ function test(){
     setTimeout(recentwords,0000);
 }
 dayword();
-

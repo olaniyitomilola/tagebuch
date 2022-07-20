@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@800&family=Montserrat:wght@500;600&family=Mulish:wght@900&family=Quicksand&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="loginPage()">
     <header>
         <div id="logo"><ion-icon name="book"></ion-icon></div>
         <div id = "appname">Tagebuch</div>
@@ -19,10 +19,10 @@
         <form id="login" action="dashboard.html" method="POST">
             <div id="welcomemessage">Wilkommen</div>
             <label for="username">Nutzername:</label>
-            <input onfocus="removeError()" type="text" id = 'username' name = 'username'>
+            <input  type="text" id = 'username' name = 'username'>
             <label  for="password">Passwort:</label>
-            <input onfocus="removeError()" type="password" id = 'password' name = 'password'>
-            <input id="btn_login" onclick="login()" type="button" value="EINLOGGEN">
+            <input  type="password" id = 'password' name = 'password'>
+            <input id="btn_login" type="button" value="EINLOGGEN">
             <div id="errorlogger"></div>
         </form>
     </main>

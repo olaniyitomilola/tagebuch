@@ -17,22 +17,28 @@
     </header>
     <main>
         <div class="container">
-            <div id = 'displayboard' >
-                <div id="wordcard">
-                    <div id="wordcardtitle">Zufälliges Wort</div>
-                    <div id="wordoftheday"></div>
-                    <div id="wordmeaning">
-                        <p>Bedeutung: <span></span></p>             
+
+            <template id = 'template-dashboard'>
+                <div id = 'displayboard' >
+                    <div id="wordcard">
+                        <div id="wordcardtitle">Zufälliges Wort</div>
+                        <div id="wordoftheday"></div>
+                        <div id="wordmeaning">
+                            <p>Bedeutung: <span></span></p>             
+                        </div>
                     </div>
+                    <div id="recentwords">
+                        <div id="recentwordtitle">kürzlich hinzugefügte Wörter </div>
+                        <div id="recentlyadded"></div>
+                        
+                    </div>
+                    <div id="taskstatus"></div>
+                    <div id="currentreward"></div>
                 </div>
-                <div id="recentwords">
-                    <div id="recentwordtitle">kürzlich hinzugefügte Wörter </div>
-                    <div id="recentlyadded"></div>
-                    
-                </div>
-                <div id="taskstatus"></div>
-                <div id="currentreward"></div>
-            </div>
+
+
+            </template>
+        
             <div id="nav">
                 <div  class = "nav active"id="home">
                     <ion-icon name="home"></ion-icon>

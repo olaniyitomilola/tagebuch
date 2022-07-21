@@ -54,14 +54,6 @@ let register =  [
     {erlebt: 'experienced'}
 
 ]
-
-
-
-let templateDashboard = document.getElementById('template-dashboard');
-
-//let templateSelector = document.importNode(templateDashboard.content, true);
-//panel.appendChild(templateSelector);
-
 let username = document.getElementById('username');
 let btn_login = document.getElementById('btn_login')
 
@@ -71,6 +63,16 @@ let addedlist = document.getElementById('recentlyadded');
 let wordoftheday = document.getElementById('wordoftheday')
 let wordofthedaymeaning = document.querySelector('#wordmeaning span')              
 let panel = document.querySelector('.container');
+const actives = document.querySelectorAll('.nav');
+
+
+
+let templateDashboard = document.getElementById('template-dashboard');
+
+let templateSelector = document.importNode(templateDashboard.content, true);
+
+
+
 
 function loginPage (){
         btn_login.addEventListener('click', ()=>{
@@ -96,7 +98,6 @@ function loginPage (){
 }
 
 function dashboardPage(){
-    const actives = document.querySelectorAll('.nav');
 
     actives.forEach((active) => {
         active.addEventListener('click', () => {
@@ -105,6 +106,11 @@ function dashboardPage(){
 
         });
     });
+    panel.appendChild(templateSelector);
+
+    //test();
+   dayword();
+
 }
 //navselector
 
@@ -171,4 +177,3 @@ function recentwords(){
 function test(){
     setTimeout(recentwords,0000);
 }
-dayword();
